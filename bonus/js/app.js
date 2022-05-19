@@ -37,9 +37,13 @@ posso inserire un minimo / massimo di km possibili? */
         let eta = document.querySelector("[name='eta']");
         let km = document.querySelector("[name='kmDaPercorrere']"); 
         const prezzoKm = 0.21;
-        const el = document.getElementById("submitButton");
+        const submitButton = document.getElementById("submitButton");
+        const deleteButton = document.getElementById("cancelButton");
         let totale = 0;
-        el.addEventListener("click", function(){
+        deleteButton.addEventListener("click", function() {
+            window.location.reload();
+        })
+        submitButton.addEventListener("click", function(){
             
             nome = nome.value;
             let kmDaPercorrere = parseInt(km.value);
