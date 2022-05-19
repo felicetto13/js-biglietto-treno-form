@@ -45,8 +45,17 @@ posso inserire un minimo / massimo di km possibili? */
             let kmDaPercorrere = parseInt(km.value);
             let etaPasseggero = parseInt(eta.value);
             let scontoDaApplicare = 1;
-
-            if(etaPasseggero<18) {
+            let bool = true;
+            if(isNaN(kmDaPercorrere) || kmDaPercorrere < 0 || kmDaPercorrere > 450){
+                bool=false;
+                    alert("Attenzione!! Devi inserire i Kilometri con un valore numerico valido compreso tra 0 e 450!")
+            }
+            if(isNaN(etaPasseggero) || etaPasseggero < 0 || etaPasseggero > 110){
+                bool=false;
+                alert("Attenzione!! Devi inserire l'età del passeggero con un valore numerico valido compreso tra 0 e 109!")
+            }
+            if(bool){
+                if(etaPasseggero<18) {
                 scontoDaApplicare=0.8;
             }else if (etaPasseggero>65){
                 scontoDaApplicare= 0.6;
@@ -89,4 +98,6 @@ posso inserire un minimo / massimo di km possibili? */
                 </div>
             </div>
             `;
+            }
+            
         });
